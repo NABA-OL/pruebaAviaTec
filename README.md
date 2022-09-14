@@ -20,7 +20,7 @@ Prueba técnica Aviatec
   })
   ```
   
-  En la base de datos se insertaron de ejemplo dos empleados, para iniciar sesion se puede iniciar con "usuario: NAB123 y clave: 123123"
+  En la base de datos se insertaron de ejemplo dos empleados, para iniciar sesion en la pagina se puede iniciar con "usuario: NAB123 y clave: 123123"
   o con "usuario: admin123 y clave: 123456"
   
   En la carpeta Raiz se encuentra el .sql de la base de datos, Se hizo uso de MySql
