@@ -1,0 +1,21 @@
+html {
+  font-size: 14px;
+}
+
+.enlaces-registro{
+  float: right;
+  position: relative;
+  top: 14px;
+  right: 18px;
+}
+
+form.buscador{
+  padding: 0;
+  text-align: center
+}
+
+img.avatar{
+  width: 30px;
+  border-radius: 100%;
+}
+

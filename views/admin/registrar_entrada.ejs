@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registrar Entrada</title>
+  <link rel="stylesheet" href="/stylesheets/estilos.css">
+  <link rel="stylesheet" href="/stylesheets/mini-default.min.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  <script src="/javascripts/ckeditor5-build-classic/ckeditor.js"></script>
+</head>
+
+<body>
+  <% include ../partials/encabezado_privado %>
+
+  <div class="container text-center">
+    <h1>Registrar Entrada</h1>
+    <hr>
+
+    <div class="row">
+      <div class="col-sm-0 col-lg-3"></div>
+      <div class="col-sm-12 col-lg-6 col-lg-6 content-center text-center">
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <% if (mensaje && mensaje.length > 0) { %>
+            <h4><span class="icon-info"></span>
+              <%=mensaje%>
+            </h4>
+            <% } %>
+          </div>
+        </div>
+
+        <form action="/admin/procesar_entrada" method="POST">
+          <fieldset>
+            <legend>Datos de vehiculo</legend>
+            <p>
+              <label for="t_veh">Tipo Vehiculo</label>
+              <br>
+              <input list="list_t_veh" name="t_veh" id="t_veh" required="true" style="width: 100%;">
+              <datalist id="list_t_veh">
+                <% vehiculos.forEach(vehiculo=> { %>
+                <option value="<%=vehiculo.id_tipo%>"><%=vehiculo.ntipo_veh%></option>
+                  <% }) %>
+              </datalist>
+            </p>
+            <p>
+              <label for="placa">Placa</label>
+              <br>
+              <input type="text" id="placa" name="placa" required="true" min="6" max="6" style="width: 100%;" />
+            </p>
+
+            <p>
+              <input class="primary" type="submit" value="Continuar" />
+            </p>
+          </fieldset>
+        </form>
+
+      </div>
+      <div class="col-sm-0 col-lg-3"></div>
+    </div>
+
+  </div>
+
+  <% include ../partials/pie %>
+
+
+  <script src="/javascripts/script.js"></script>
+</body>
+
+</html>

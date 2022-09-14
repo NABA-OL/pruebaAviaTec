@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Reporte 1</title>
+  <link rel="stylesheet" href="/stylesheets/estilos.css">
+  <link rel="stylesheet" href="/stylesheets/mini-default.min.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+</head>
+
+<body>
+  <% include ../partials/encabezado_privado %>
+
+  <div class="container">
+
+    <h1>Reporte 1</h1>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <form class="buscador" action="/admin/reporte1">
+          <label for="fecha1">Fecha 1</label>
+          <input type="date" id="fecha1" name="fecha1" value="<%=fecha1%>" style="width: 42%;" />
+          <label for="fecha2">Fecha 2</label>
+          <input type="date" id="fecha2" name="fecha2" value="<%=fecha2%>" style="width: 42%;" />
+          <button type="submit"><span class="icon-search"></span>Buscar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Total Recaudado</th>
+            <th scope="col">Total Vehiculos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% if (total_rec && total_rec.length > 0 ) {%>
+            <td><%=total_rec%>$</td>
+            <% } %>
+
+            <% if (total_veh && total_veh.length > 0 ) {%>
+            <td><%=total_veh%></td>
+            <% } %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+  <% include ../partials/pie %>
+  <script src="/javascripts/script.js"></script>
+</body>
+
+</html>
