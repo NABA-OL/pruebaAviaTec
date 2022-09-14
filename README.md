@@ -1,4 +1,4 @@
-# pruebaAviaTec
+# PruebaAviaTec
 Prueba técnica Aviatec
 
   Para iniciar el servidor se debe entrar por el terminal o abrir el terminal en la carpeta raiz del proyecto 
