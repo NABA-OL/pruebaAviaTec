@@ -5,7 +5,7 @@ Prueba técnica Aviatec
   Se puede iniciar con el comando "node webapp.js" o con "nodemon webapp.js" 
   ya que se uso nodemon para facilitar el reinicio del servidor con cada cambio en el codigo
   El servidor corre en el puerto 8081, se coloca la direccion http://localhost:8081/ en el navegador una vez corra el servidor
-  si se desea cambair el puerto se puede cambiar en el archivo "webapp.js"
+  si se desea cambiar el puerto se puede cambiar en el archivo "webapp.js"
   
   Para el servidor poder acceder a la base de datos se deben cambiar las credenciales en los archivos 
   "middleware.js", "privadas.js", "publicas.js"
