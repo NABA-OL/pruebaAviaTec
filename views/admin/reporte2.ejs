@@ -21,6 +21,7 @@
     <div class="row">
       <div class="col-sm-12">
         <form class="buscador" action="/admin/reporte2">
+          <!--Se crea un buscador que recibira unas fechas que luego enviara al servidor-->
           <label for="fecha1">Fecha 1</label>
           <input type="date" id="fecha1" name="fecha1" value="<%=fecha1%>" style="width: 42%;" />
           <label for="fecha2">Fecha 2</label>
@@ -33,6 +34,7 @@
     <div class="row">
       <div class="col-sm-12">
         <table class="table">
+          <!--Se crea una tabla con los datos deseados-->
           <thead>
             <tr>
               <th scope="col">ID Vehiculo</th>
@@ -46,6 +48,7 @@
           </thead>
           <tbody>
             <% registros.forEach(registro=> { %>
+            <!--Si el servidor devuelve datos, por cada dato en la lista creara una fila con los datos correspondientes-->
             <tr>
 
               <th scope="row"><%=registro.id_vehiculo%></td>

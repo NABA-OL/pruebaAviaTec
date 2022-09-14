@@ -14,6 +14,7 @@
 
 <body>
   <% include ../partials/encabezado_privado %>
+  <!-- Se importa el encabezado desde partials-->
 
   <div class="container text-center">
     <h1>Registrar Entrada</h1>
@@ -34,6 +35,7 @@
         </div>
 
         <form action="/admin/procesar_entrada" method="POST">
+          <!--Formulario para registar la entrada de un vehiculo-->
           <fieldset>
             <legend>Datos de vehiculo</legend>
             <p>
@@ -41,9 +43,9 @@
               <br>
               <input list="list_t_veh" name="t_veh" id="t_veh" required="true" style="width: 100%;">
               <datalist id="list_t_veh">
-                <% vehiculos.forEach(vehiculo=> { %>
+                <% vehiculos.forEach(vehiculo=> { %>                                                      <!--Si el servidor devuelve una lista por cada elemento crea un option-->
                 <option value="<%=vehiculo.id_tipo%>"><%=vehiculo.ntipo_veh%></option>
-                  <% }) %>
+                <% }) %>
               </datalist>
             </p>
             <p>
@@ -51,7 +53,6 @@
               <br>
               <input type="text" id="placa" name="placa" required="true" min="6" max="6" style="width: 100%;" />
             </p>
-
             <p>
               <input class="primary" type="submit" value="Continuar" />
             </p>

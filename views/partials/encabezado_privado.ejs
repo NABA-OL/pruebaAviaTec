@@ -1,4 +1,4 @@
-<header class="container-fluid">
+<header class="container-fluid">                                                        <!--Encabezado que se mostrara cuando ya se haya iniciado session-->
   <div class="row">
     <div class="col-md-3"><a href="" class="logo w-auto">
       <img style="width: 50px;" src="https://img.icons8.com/fluency/96/000000/parking.png" /></a>
@@ -6,8 +6,8 @@
     </div>
     <div class="col-md-9 text-right">
       <span class="icon-user"></span>
-      <%=usuario.user_empleado%> |
-      <a type="button" class="btn" href="/admin/registrar_entrada">Registrar Entrada</a>|
+      <%=usuario.user_empleado%> |                                                            <!--Muestra el Usuario del empleado logeado-->
+      <a type="button" class="btn" href="/admin/registrar_entrada">Registrar Entrada</a>|     <!--Menu basico para cada accion que se desea hacer-->
       <a type="button" class="btn" href="/admin/registrar_salida">Registrar salida</a>|
       <a type="button" class="btn" href="/admin/nuevo_veh">Agregar Nuevo Tipo de Veh</a>|
       <a type="button" class="btn" href="/admin/reportes">Reportes</a>|

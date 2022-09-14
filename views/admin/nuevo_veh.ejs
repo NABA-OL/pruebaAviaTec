@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Blog Viajes</title>
+  <title>Nuevo Tipo de Vehiculo</title>
   <link rel="stylesheet" href="/stylesheets/estilos.css">
   <link rel="stylesheet" href="/stylesheets/mini-default.min.css">
   <link rel="stylesheet" href="/stylesheets/bootstrap.css">
@@ -13,6 +13,7 @@
 
 <body>
   <% include ../partials/encabezado_privado %>
+  <!-- Se importa el encabezado desde partials-->
 
   <div class="container text-center">
     <h1>Registro Nuevo Vehiculo</h1>
@@ -25,10 +26,10 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <% if (mensaje && mensaje.length > 0) { %>
-              <h4><span class="icon-info"></span>
-                <%=mensaje%>
-              </h4>
-              <% } %>
+            <h4><span class="icon-info"></span>
+              <%=mensaje%>
+            </h4>
+            <% } %>
           </div>
         </div>
 
@@ -52,6 +53,7 @@
   </div>
 
   <% include ../partials/pie %>
+  <!-- Se importa el pie de página-->
   <script src="/javascripts/script.js"></script>
 </body>
 

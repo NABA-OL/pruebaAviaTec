@@ -20,7 +20,7 @@
 
     <div class="row">
       <div class="col-sm-12">
-        <form class="buscador" action="/admin/reporte1">
+        <form class="buscador" action="/admin/reporte1">                                              <!--Se crea un buscador que recibira unas fechas que luego enviara al servidor-->
           <label for="fecha1">Fecha 1</label>
           <input type="date" id="fecha1" name="fecha1" value="<%=fecha1%>" style="width: 42%;" />
           <label for="fecha2">Fecha 2</label>
@@ -41,11 +41,11 @@
         </thead>
         <tbody>
           <tr>
-            <% if (total_rec && total_rec.length > 0 ) {%>
+            <% if (total_rec && total_rec.length > 0 ) {%>                                          <!--Si el servidor devuelve un valor de total recaudado lo muestra-->
             <td><%=total_rec%>$</td>
             <% } %>
 
-            <% if (total_veh && total_veh.length > 0 ) {%>
+            <% if (total_veh && total_veh.length > 0 ) {%>                                          <!--Si el servidor devuelve un valor de total vehiculos lo muestra-->
             <td><%=total_veh%></td>
             <% } %>
           </tr>

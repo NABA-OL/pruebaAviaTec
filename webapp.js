@@ -9,7 +9,6 @@ const bodyParser = require('body-parser');
 const rutasMiddleware = require('./routes/middleware');
 const rutasPublicas = require('./routes/publicas');
 const rutasPrivadas = require('./routes/privadas');
-const rutasApi = require('./routes/api');
 const { application } = require('express');
 const accessTokenSecret="youraccesstokensecret";
 
@@ -25,7 +24,6 @@ aplicacion.use(fileUpload());
 aplicacion.use(rutasMiddleware);
 aplicacion.use(rutasPublicas);
 aplicacion.use(rutasPrivadas);
-aplicacion.use(rutasApi);
 
 aplicacion.listen(8081, () => {
   console.log("Servidor iniciado");

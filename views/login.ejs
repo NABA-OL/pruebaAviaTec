@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <% include ./partials/encabezado_publico %>
+  <% include ./partials/encabezado_publico %>                                 <!-- Se importa el encabezado desde partials-->
 
   <div class="container text-center">
     <h1>Inicio de Sesión</h1>
@@ -24,7 +24,7 @@
 
         <div class="row">
           <div class="col-md-12 text-center">
-            <% if (mensaje && mensaje.length > 0) { %>
+            <% if (mensaje && mensaje.length > 0) { %>                        <!-- Si hay un mensaje se muestra-->
               <h4><span class="icon-info"></span>
                 <%=mensaje%>
               </h4>
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <form action="/procesar_inicio" method="POST">
+        <form action="/procesar_inicio" method="POST">                        <!-- Se crea un formulario para el inicio de sesion-->
           <fieldset>
             <legend>Datos para entrar</legend>
             <p>
@@ -56,7 +56,7 @@
 
   </div>
 
-  <% include ./partials/pie %>
+  <% include ./partials/pie %>                                                <!-- Se importa el pie de página-->
   <script src="/javascripts/script.js"></script>
 </body>
 

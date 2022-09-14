@@ -21,9 +21,10 @@
     <div class="row">
       <div class="col-sm-12">
         <form class="buscador" action="/admin/reporte3generado">
+          <!--Se crea un buscador que recibira unas fechas y el tipo de vehiculo que luego enviara al servidor-->
           <label for="fecha1">Fecha 1</label>
           <input type="date" id="fecha1" name="fecha1" value="<%=fecha1%>" style="width: 33%;" />
-          
+
           <label for="fecha2">Fecha 2</label>
           <input type="date" id="fecha2" name="fecha2" value="<%=fecha2%>" style="width: 33%;" />
 
@@ -44,7 +45,7 @@
 
     <div class="row">
       <div class="col-sm-12">
-        <table class="table">
+        <table class="table">                                                       <!--Se crea una tabla con los datos deseados-->
           <thead>
             <tr>
               <th scope="col">ID Vehiculo</th>
@@ -57,7 +58,7 @@
             </tr>
           </thead>
           <tbody>
-            <% registros.forEach(registro=> { %>
+            <% registros.forEach(registro=> { %>                                    <!--Por cada vehiculo en la lista que dio el servidor se crea una fila con los datos-->
             <tr>
 
               <th scope="row"><%=registro.id_vehiculo%></td>

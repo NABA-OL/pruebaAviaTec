@@ -24,21 +24,22 @@
 
         <div class="row">
           <div class="col-md-12 text-center">
-            
+
             <% if (mensaje && mensaje.length > 0) { %>
-              <h4><span class="icon-info"></span>
-                <%=mensaje%>
-              </h4>
-              <% } %>
+            <h4><span class="icon-info"></span>
+              <%=mensaje%>
+            </h4>
+            <% } %>
           </div>
         </div>
 
-        <div class="row"> 
+        <div class="row">
+          <!--Solo se crean unos botones que redireccionan a los tipos de reportes-->
           <div class="col-md-12 text-center">
             <a type="button" class="btn btn-outline-primary" href="/admin/reporte1">Reporte 1</a>
             <a type="button" class="btn btn-outline-primary" href="/admin/reporte2">Reporte 2</a>
             <a type="button" class="btn btn-outline-primary" href="/admin/reporte3">Reporte 3</a>
-            
+
           </div>
         </div>
 

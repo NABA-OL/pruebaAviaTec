@@ -3,7 +3,18 @@ const express = require('express')
 const router = express.Router()
 const mysql = require('mysql')
 
-var pool = mysql.createPool({ /*datos para la conexion a la BD en mySQL*/
+
+/**
+   * 
+   * datos para la conexion a la BD en mySQL
+   * Se especifica el limite de conexiones
+   * el host donde esta alojada la base de datos
+   * las credeciales de acceso 
+   * y el nombre de la base de datos a usar
+   * 
+   * */
+
+var pool = mysql.createPool({ 
   connectionLimit: 20,
   host: 'localhost',
   user: 'root',
@@ -13,8 +24,8 @@ var pool = mysql.createPool({ /*datos para la conexion a la BD en mySQL*/
 
 
 router.get('/', (peticion, respuesta) => { /*Ruta inicial sin iniciar sesion*/
-  respuesta.render('login', {
-    mensaje: peticion.flash('mensaje')
+  respuesta.render('login', {  /*Renderiza la página de iniciar sesion con base al archivo .ejs correspondiente "login.ejs"*/
+    mensaje: peticion.flash('mensaje') /*Recibe un mensaje para mostrar si existe*/
   })
 })
 
@@ -26,13 +37,13 @@ router.post('/procesar_inicio', (peticion, respuesta) => { /*Procesamiento del i
       WHERE
       user_empleado = ${connection.escape(peticion.body.user)} AND
       password_empleado = ${connection.escape(peticion.body.password)}
-    ` /*Consulta en la base de datos si existen esos datos*/
-    connection.query(consulta, (error, filas, campos) => {
-      if (filas.length > 0) {
+    ` /*Se crea la consulta para verificar si existe dicho usuario*/
+    connection.query(consulta, (error, filas, campos) => {  /*Se realiza la consulta a la base datos y la respuestae s almacenada en la variable "filas"*/
+      if (filas.length > 0) { /* Se verifica si se retorno algo, si la variable tiene una longitud*/
         peticion.session.usuario = filas[0]
-        respuesta.redirect('/admin/index') /*Si existen lo redirige a al seccion de admin*/
+        respuesta.redirect('/admin/index') /*Si existe el usurario en la base de datos lo redirige a al seccion de admin*/
       } else {
-        peticion.flash('mensaje', 'Datos inválidos') /*Si no existe muestra un mensaje y redirecciona de nuevo a al pagina inicial*/
+        peticion.flash('mensaje', 'Datos inválidos') /*Si no existe muestra un mensaje y redirecciona de nuevo a al página inicial*/
         respuesta.redirect('/')
       }
     })
