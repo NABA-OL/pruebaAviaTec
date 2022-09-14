@@ -10,14 +10,15 @@ Prueba técnica Aviatec
   Para el servidor poder acceder a la base de datos se deben cambiar las credenciales en los archivos 
   "middleware.js", "privadas.js", "publicas.js"
   
-  var pool = mysql.createPool({ 
+  ```
+  var pool = mysql.createPool({
   connectionLimit: 20,
   host: 'localhost',
   user: 'usuario de la base datos',                       <----------
   password: 'Contraseña de acceso del usuario a la BD',   <----------
   database: 'prueba_estacionamiento'
   })
-  
+  ```
   
   En la base de datos se insertaron de ejemplo dos empleados, para logearse se puede iniciar con usuario NAB123 y clave 123123
   o con admin123 y clave 123456
